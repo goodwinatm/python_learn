@@ -1,7 +1,7 @@
 import allure
 import pytest
 
-from hw2.test_pytest2.hero_management import HeroManagement
+from homework2.test_pytest2.hero_management import HeroManagement
 
 
 # 实例化类 类名()
