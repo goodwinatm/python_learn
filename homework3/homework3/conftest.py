@@ -12,11 +12,21 @@ def pytest_collection_modifyitems(items):
         i.name=i.name.encode("utf-8").decode("unicode_escape")
         i._nodeid=i.nodeid.encode("utf-8").decode("unicode_escape")
 
+# @pytest.fixture(params=LoadUtils.load_yaml("hp_data.yaml")["success"])
+# def get_hero(request):
+#     new_list = []
+#     for i in request.params:
+#          i = i + 1
+#          new_list.append(i)
+#     yield new_list
+#     #yield request.param + 1
+#     print("测试用例执行完成")
 @pytest.fixture(params=LoadUtils.load_yaml("hp_data.yaml")["success"])
 def get_hero(request):
-    new_list = []
-    for i in request.param:
-        i = i + 1
-        new_list.append(i)
-    yield new_list
+    # new_list = []
+    # for i in request.param:
+    #     i = i + 1
+    #     new_list.append(i)
+    # yield new_list
+    yield request.param+1
     print("测试用例执行完成")
