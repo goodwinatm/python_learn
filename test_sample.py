@@ -19,6 +19,3 @@ def test_c():
     b = 1
     c = 2
     assert 'abc' in "abcd"
-
-def setup():
-    print("setup执行啦")
