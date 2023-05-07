@@ -4,6 +4,7 @@ __desc__ = '更多测试开发技术探讨，请访问：https://ceshiren.com/t/
 """
 import yaml
 
+
 # 《python 内置装饰器》 静态方法 类方法 实例方法的区别。
 class LoadUtils:
 
@@ -11,17 +12,13 @@ class LoadUtils:
     # 应用场景： 工具类。
     @classmethod
     def load_yaml(self, yaml_path):
-        return yaml.safe_load(open(yaml_path))
+        return yaml.safe_load(open(yaml_path,encoding="utf8"))
 
-    @staticmethod
-    def load_data():
-        pass
-
+    # @staticmethod
+    # def load_data():
+    #     pass
 
 
 if __name__ == '__main__':
-    # 不使用类方法的方式
-    # load_utils = LoadUtils()
-    # load_utils.load_yaml()
-    # 使用类方法调用
-    print(LoadUtils.load_yaml("yaml_demo.yaml"))
+#    print(__name__)
+    print(LoadUtils.load_yaml("hp_data.yaml"))
