@@ -1,3 +1,4 @@
+import allure
 import pytest
 from homework2.test_pytest2.hero_management import HeroManagement
 from homework3.homework3.utils import LoadUtils
@@ -5,6 +6,8 @@ from homework3.homework3.utils import LoadUtils
 
 class TestCreateHero:
     @pytest.mark.parametrize("volume", LoadUtils.load_yaml("hp_data.yaml")["success"],ids=["边界值为1", "边界值为2","边界值为98", "边界值为99"])
+    @pytest.mark.volume_valid
+    @allure.title("创建英雄有效等价类测试用例")
     def test_create_hero_volume_success(self, volume):
         """
         边界值以及等价类场景的测试用例
@@ -17,6 +20,8 @@ class TestCreateHero:
         assert res.get("volume") == volume
 
     @pytest.mark.parametrize("volume", LoadUtils.load_yaml("hp_data.yaml")["fail"],ids=["无效类字符串", "无效类布尔型","边界值为0", "边界值为100"])
+    @pytest.mark.volume_invalid
+    @allure.title("创建英雄无效等价类测试用例")
     def test_create_hero_volume_fail(self, volume):
         """
         边界值以及等价类场景的测试用例
@@ -28,6 +33,7 @@ class TestCreateHero:
         assert res == False
 
     #原有需求发生变化，边界值都增加1（变为最大值100，最小值2）。如何在不改变原始测试数据情况下，还能依然完成对修改需求后的测试（使用fixture）。
+    @allure.title("创建英雄有效等价类测试数据被修改测试用例")
     def test_create_hero_volume_success3(self, get_hero):
         """
         边界值以及等价类场景的测试用例
