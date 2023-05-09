@@ -28,5 +28,6 @@ def get_hero(request):
     #     i = i + 1
     #     new_list.append(i)
     # yield new_list
+    print("测试用例参数为： "+str(request.param+1))
     yield request.param+1
     print("测试用例执行完成")
