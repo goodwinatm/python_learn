@@ -7,6 +7,7 @@ from homework3.homework3.utils import LoadUtils
 class TestCreateHero:
     @pytest.mark.parametrize("volume", LoadUtils.load_yaml("hp_data.yaml")["success"],ids=["边界值为1", "边界值为2","边界值为98", "边界值为99"])
     @pytest.mark.volume_valid
+    @pytest.mark.run(order=3)
     @allure.title("创建英雄有效等价类测试用例")
     def test_create_hero_volume_success(self, volume):
         """
@@ -21,6 +22,7 @@ class TestCreateHero:
 
     @pytest.mark.parametrize("volume", LoadUtils.load_yaml("hp_data.yaml")["fail"],ids=["无效类字符串", "无效类布尔型","边界值为0", "边界值为100"])
     @pytest.mark.volume_invalid
+    @pytest.mark.run(order=2)
     @allure.title("创建英雄无效等价类测试用例")
     def test_create_hero_volume_fail(self, volume):
         """
@@ -33,6 +35,7 @@ class TestCreateHero:
         assert res == False
 
     #原有需求发生变化，边界值都增加1（变为最大值100，最小值2）。如何在不改变原始测试数据情况下，还能依然完成对修改需求后的测试（使用fixture）。
+    @pytest.mark.run(order=1)
     @allure.title("创建英雄有效等价类测试数据被修改测试用例")
     def test_create_hero_volume_success3(self, get_hero):
         """
