@@ -97,7 +97,8 @@ class SearchPage:
             expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, '.fps-tag-item')))
 
         title_list = []
-        for element in self.driver.find_elements(By.TAG_NAME, 'a'):
+        # css 带child
+        for element in self.driver.find_elements(By.CSS_SELECTOR, '.fps-tag-item>a'):
             title_list.append(element.text)
         print(title_list)
         return title_list

@@ -22,7 +22,7 @@ class TestSearchPO:
     # 类别/标签
     def test_dropdown_search_2(self):
         assert 'java' in str(self.search.select_search_2('java')
-                                 .get_search_tag_result()[3]).lower()
+                                 .get_search_tag_result()[0]).lower()
 
     # 1. 切换三个话题，在不同类目中搜索
     # 用户
