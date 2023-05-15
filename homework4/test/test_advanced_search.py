@@ -12,6 +12,8 @@ class TestSearchPO:
     def test_search(self):
         assert 'selenium' in str(self.search.search('selenium')
                                  .get_search_result()[0]).lower()
+    def test_search_advanced_flag(self):
+        assert False == self.search.search_advanced_flag()
     # 1. 切换三个话题，在不同类目中搜索
     # 话题/帖子
     def test_dropdown_search_1(self):
