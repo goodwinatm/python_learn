@@ -25,7 +25,7 @@ class SearchPage:
             # time.sleep(2)
 
         # flag=self.driver.find_element(By.CSS_SELECTOR, '.advanced-search-category .control-label').is_displayed()
-        flag=self.driver.find_element(By.XPATH,'//label[text()="Categorized"]').is_displayed()
+        flag=self.driver.find_element(By.XPATH,'//label[text()="分类"]').is_displayed()
         # query = self.driver.find_element(By.CSS_SELECTOR, 'input.search-query')
         # query.clear()
         # query.send_keys(keyword)
@@ -37,7 +37,7 @@ class SearchPage:
         self.driver.find_element(By.CSS_SELECTOR, 'summary#search-type-header .name').click()
         # WebDriverWait(self.driver, 2).until(
         #     expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, '.select-kit-row[title="话题/帖子"]')))
-        self.driver.find_element(By.CSS_SELECTOR,'.select-kit-row[title="Topics/posts"]').click()
+        self.driver.find_element(By.CSS_SELECTOR,'.select-kit-row[title="话题/帖子"]').click()
         # self.driver.find_element(By.CSS_SELECTOR,'div#search-type-body > ul > li:nth-of-type(2)').click()
         # self.driver.find_element(By.CSS_SELECTOR,'div#search-type-body > ul > li:nth-of-type(3)').click()
 
@@ -49,7 +49,7 @@ class SearchPage:
     def select_search_2(self, keyword) -> 'SearchPage':
         self.driver.find_element(By.CSS_SELECTOR, 'summary#search-type-header .name').click()
         # self.driver.find_element(By.CSS_SELECTOR,'div#search-type-body > ul > li:nth-of-type(1)').click()
-        self.driver.find_element(By.CSS_SELECTOR,'.select-kit-row[title="Categories/tags"]').click()
+        self.driver.find_element(By.CSS_SELECTOR,'.select-kit-row[title="类别/标签"]').click()
         # self.driver.find_element(By.CSS_SELECTOR,'div#search-type-body > ul > li:nth-of-type(3)').click()
 
         query = self.driver.find_element(By.CSS_SELECTOR, 'input.search-query')
@@ -61,7 +61,7 @@ class SearchPage:
         self.driver.find_element(By.CSS_SELECTOR, 'summary#search-type-header .name').click()
         # self.driver.find_element(By.CSS_SELECTOR,'div#search-type-body > ul > li:nth-of-type(1)').click()
         # self.driver.find_element(By.CSS_SELECTOR,'div#search-type-body > ul > li:nth-of-type(2)').click()
-        self.driver.find_element(By.CSS_SELECTOR,'.select-kit-row[title="Users"]').click()
+        self.driver.find_element(By.CSS_SELECTOR,'.select-kit-row[title="用户"]').click()
 
         query = self.driver.find_element(By.CSS_SELECTOR, 'input.search-query')
         query.clear()

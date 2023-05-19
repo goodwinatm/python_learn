@@ -3,8 +3,13 @@ class TestSearchPO:
     def setup_class(self):
         self.main = MainPage()
 
+
     def setup(self):
+        self.main.to_login()
+        print("setup login")
         self.search = self.main.to_search_advance()
+    def teardown(self):
+        self.main.to_logout()
 
     def teardown_class(self):
         self.main.close()
