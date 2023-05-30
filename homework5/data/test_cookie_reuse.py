@@ -11,7 +11,7 @@ def test_test_cookie_get():
     driver.get('https://work.weixin.qq.com/wework_admin/frame')
     WebDriverWait(driver,600).until(expected_conditions.url_contains('wework_admin/frame'))
     cookies=driver.get_cookies()
-    with open ('cookies.json','w') as f:
+    with open ('cookies.json', 'w') as f:
         json.dump(cookies,f)
 
 def test_cookie_use():
