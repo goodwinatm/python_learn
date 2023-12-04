@@ -1,6 +1,6 @@
 import openai
 import os
-os.environ["GUY_OPENAI_KEYS"]='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'
+os.environ["GUY_OPENAI_KEYS"]=''
 openai.api_key=os.getenv("GUY_OPENAI_KEYS")
 prompt = "Give me details about the technology startup called Jinghang"
 def create_test_prompt(topic,num_questions,num_possibale_answers):

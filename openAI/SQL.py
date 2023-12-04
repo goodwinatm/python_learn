@@ -5,7 +5,7 @@ import sqlalchemy
 from sqlalchemy import create_engine
 from sqlalchemy import text
 
-os.environ["GUY_OPENAI_KEYS"]='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'
+os.environ["GUY_OPENAI_KEYS"]='sk-'
 openai.api_key=os.getenv("GUY_OPENAI_KEYS")
 df=pd.read_csv("sales_data_sample.csv")
 ##
