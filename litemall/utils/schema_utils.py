@@ -35,5 +35,5 @@ class Schema_utils:
 if __name__=='__main__':
     data = {'errno': 0, 'data': {'total': 1, 'pages': 1, 'limit': 10, 'page': 1, 'list': [{'id': 1436722, 'goodsSn': '12491264512421', 'name': 'yangu_612', 'categoryId': 0, 'brandId': 0, 'gallery': [], 'keywords': '', 'brief': '', 'isOnSale': True, 'sortOrder': 100, 'picUrl': '', 'isNew': True, 'isHot': True, 'unit': '’件‘', 'counterPrice': 8888.0, 'retailPrice': 0.0, 'addTime': '2023-06-13 13:56:57', 'updateTime': '2023-06-13 13:56:57', 'deleted': False}]}, 'errmsg': '成功'}
     # print(Schema_utils.generate_jsonschema_file("schema.json",data))
-    print(Schema_utils.schema_validate_by_file(data, "../schema.json"))
+    print(Schema_utils.schema_validate_by_file(data, "schema.json"))
     

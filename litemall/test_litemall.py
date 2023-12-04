@@ -18,7 +18,7 @@ class Test_litemall:
 
         self.token = jsonpath.jsonpath(r.json(), "$..token")[0]
         self.headers={"X-Litemall-Admin-Token":self.token}
-        self.good_name = "yangu_612"
+        self.good_name = "yangu_613"
 
     def test_create_good(self):
 
